@@ -8,12 +8,17 @@ import {
   handlePending,
   handleRejected,
 } from './handles';
-import { actionStatus } from './constants';
-import { contactsInitialState } from './contactsInitialState';
+import { actionStatus } from '../constants';
+
+const initialState = {
+  items: [],
+  isLoading: false,
+  error: null,
+};
 
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: contactsInitialState,
+  initialState,
   extraReducers: builder => {
     builder
       .addCase(fetchContacts.fulfilled, handleFetchContacts)
