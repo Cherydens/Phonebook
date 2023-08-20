@@ -1,3 +1,4 @@
+import { Button, FormGroup, Typography } from '@mui/material';
 import { useAuth } from 'hooks/useAuth';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -8,12 +9,23 @@ const UserMenu = () => {
   const { user } = useAuth();
 
   return (
-    <div>
-      <p>Welcome, {user.name}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
+    <FormGroup
+      sx={{
+        display: 'inline-flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 1,
+      }}
+    >
+      <Typography variant="h6">Welcome, {user.name}</Typography>
+      <Button
+        variant="contained"
+        type="button"
+        onClick={() => dispatch(logOut())}
+      >
         Logout
-      </button>
-    </div>
+      </Button>
+    </FormGroup>
   );
 };
 

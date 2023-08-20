@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Form, FormLabel } from './ContactForm.styled';
-import { Button } from 'components/Commons/Button.styled';
+
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
+import { Button, FormGroup, TextField } from '@mui/material';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -52,10 +52,20 @@ export const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <FormLabel>
-        Name
-        <input
+    <form onSubmit={handleSubmit}>
+      <FormGroup
+        sx={{
+          display: 'inline-flex',
+          gap: 1,
+          boxShadow: 1,
+          borderRadius: 2,
+          p: 2,
+          minWidth: 320,
+        }}
+      >
+        <TextField
+          label="Name"
+          variant="outlined"
           type="text"
           name="name"
           value={name}
@@ -64,11 +74,10 @@ export const ContactForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-      </FormLabel>
 
-      <FormLabel>
-        Number
-        <input
+        <TextField
+          label="Number"
+          variant="outlined"
           type="tel"
           name="number"
           value={number}
@@ -77,9 +86,11 @@ export const ContactForm = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-      </FormLabel>
 
-      <Button type="submit">Add contact</Button>
-    </Form>
+        <Button variant="contained" type="submit">
+          Add contact
+        </Button>
+      </FormGroup>
+    </form>
   );
 };

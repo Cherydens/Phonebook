@@ -1,12 +1,15 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: column;
-
-  width: 320px;
-  padding-top: 24px;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
   padding-bottom: 24px;
+`;
+
+export const Main = styled.main`
+  min-width: 100%;
+  padding: 0 24px;
 `;
