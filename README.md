@@ -5,9 +5,9 @@ An application with the ability to register, login, and user updates, and work w
 
 ## Links
 
-Github repository - https://github.com/Cherydens/WebStudio
+Github repository - https://github.com/Cherydens/Phonebook
 
-Live page - https://Cherydens.github.io/WebStudio
+Live page - https://Cherydens.github.io/Phonebook
 
 ## Contacts
 
